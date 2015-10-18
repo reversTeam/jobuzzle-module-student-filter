@@ -1,0 +1,23 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:48:29
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:49:57
+**************************************************************/
+
+
+class StudentFilterDataTemplateDeleteView extends FilterDataTemplateDeleteView {
+
+	public _class = 'studentfilter';
+	public _elementType = 'StudentFilter';
+
+	public display : function () {
+		return <div>Delete Student Filter</div>;
+	}
+
+}

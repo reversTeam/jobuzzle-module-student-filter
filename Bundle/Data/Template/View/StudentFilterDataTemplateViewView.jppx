@@ -1,0 +1,48 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:49:07
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:52:07
+**************************************************************/
+
+class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
+
+	public _class = 'studentfilter';
+	public _elementType = 'StudentFilter';
+
+	public display : function () {
+		var router = serviceLocator.get('Router');
+		var entity = this.state['entity'];
+		var parent = entity.getParent();
+		var picture = '';
+		var style = {};
+
+		if (!entity)
+			return (<div>Filter not loaded</div>);
+		else if (parent.getPicture() != undefined)
+			picture = this.getUrlAsset(parent.getPicture());
+		style['backgroundImage'] = 'url("'+ picture +'")'; 
+
+		return <div className="filter view">
+			<div className="actions">
+				<i className="fa fa-tasks" data-url={router.entityRoute(entity, 'skilllink')} onClick={this.link}></i>
+				<i className="fa fa-pencil" data-url={this.getUrlEdit()} onClick={this.link}></i>
+			</div>
+			<div className="parent view">
+				<div className="picture" style={style}></div>
+				<div className="nameProfile">
+					{parent.getFirstname() +' '+ parent.getLastname()}
+				</div>
+			</div>
+			<div className="skilllinks">
+				{ this.getHelper('DisplaySkillLink', { entity : entity }) }
+			</div>
+		</div>;
+	}
+
+}

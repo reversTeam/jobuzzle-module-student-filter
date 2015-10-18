@@ -1,0 +1,19 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 10:57:19
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:55:37
+**************************************************************/
+
+class StudentFilterDataMainController extends FilterDataMainController {
+
+	_serviceName = 'studentfilter_data_main_service';
+	_entityType = 'StudentFilter';
+	_url = 'studentfilters';
+
+}

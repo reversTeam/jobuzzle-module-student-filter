@@ -1,0 +1,17 @@
+###############################################################
+#     ####         #                               #          # Jobuzzle - Copyright All rights reserved
+#     ####         #                               #          #
+#       ##  #####  ######  #     # ####### ####### #  #####   # @Author: revers
+#       ## #     # #     # #     #      #       #  # #     #  #
+#       ## #     # #     # #     #     #       #   # #     #  # @Date:   2015-10-18 10:40:45
+#       ## #     # #     # #     #    #       #    # #     #  #
+#       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
+#  ####### #     # #     # #     #  #       #      # #        #
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 11:55:05
+###############################################################
+
+invokables:
+	studentfilter_data_fieldset_form : Data/Form/StudentFilterDataFieldsetForm
+	studentfilter_data_create_form : Data/Form/StudentFilterDataCreateForm
+	studentfilter_data_edit_form : Data/Form/StudentFilterDataEditForm
+	studentfilter_data_search_form : Data/Form/StudentFilterDataSearchForm
