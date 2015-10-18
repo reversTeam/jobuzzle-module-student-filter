@@ -1,0 +1,59 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:48:52
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:08:39
+**************************************************************/
+
+class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
+
+	public display : function () {
+		var router = serviceLocator.get('Router');
+		var entity = this.state['entity'];
+		var parent = entity.getParent();
+		var parentUrl = router.entityRoute(parent);
+		var filterName = entity.getName();
+		var searchTemplate = this.getSearchTemplate();
+		
+		if (parent) {
+			var content = <div className="filter timeline">
+				<div className="parent miniature" data-url={parentUrl} onClick={this.link}>
+					{ parent ? parent.displayMiniature() : null }
+				</div>
+				<div className="parent name" data-url={parentUrl} onClick={this.link}>
+					{parent.getFirstname() +' '+ parent.getLastname()}
+				</div>
+				<div className="moreInfo">
+					<span className="info">
+						<i className="fa fa-eur"></i>{ entity.getSalarymin() +'k' }
+					</span>
+					<span className="info">
+						<i className="fa fa-map-marker"></i>Paris
+					</span>
+				</div>
+				<div className="previewSkill">
+					{ this.getHelper('DisplaySkillLink', {
+						entity : entity,
+						limit : 3,
+						parent : this._template
+					}) }
+				</div>
+				<div className="centerButton">
+					<button className="secondary" data-url={this.getUrl()} onClick={this.link}>Voir le profil</button>
+				</div>
+			</div>
+		} else {
+			var content = <div className="filter timeline load">
+				{this.getTemplate('navigation_loader_main_template')}
+			</div>;
+		}
+
+		return content;
+	}
+
+}

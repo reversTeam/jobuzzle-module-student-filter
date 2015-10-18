@@ -1,0 +1,19 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:27:42
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:41:30
+**************************************************************/
+
+class StudentFilterDataEditForm extends FilterDataEditForm {
+
+	public _title = 'form.title.studentfilter.edit';
+	public _url = '/studentfilter/view/update';
+	public _paramNameRoute = 'studentfilter_url';
+
+}
