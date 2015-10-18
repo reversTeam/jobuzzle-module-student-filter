@@ -1,0 +1,20 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 11:44:40
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:55:23
+**************************************************************/
+
+class StudentFilterDataSearchTemplate extends FilterDataSearchTemplate {
+
+	public _viewClassName = 'StudentFilterDataTemplateSearchView';
+	public _serviceName = 'studentfilter_data_main_service';
+	public _type = 'StudentFilter';
+	public _route = 'studentfilter';
+
+}

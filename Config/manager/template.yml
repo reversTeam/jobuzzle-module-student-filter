@@ -1,0 +1,27 @@
+###############################################################
+#     ####         #                               #          # Jobuzzle - Copyright All rights reserved
+#     ####         #                               #          #
+#       ##  #####  ######  #     # ####### ####### #  #####   # @Author: revers
+#       ## #     # #     # #     #      #       #  # #     #  #
+#       ## #     # #     # #     #     #       #   # #     #  # @Date:   2015-10-18 10:41:24
+#       ## #     # #     # #     #    #       #    # #     #  #
+#       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
+#  ####### #     # #     # #     #  #       #      # #        #
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 11:54:59
+###############################################################
+
+invokables:
+	studentfilter_data_timeline_template	: Data/Template/StudentFilterDataTimelineTemplate
+
+	studentfilter_data_search_template		: Data/Template/StudentFilterDataSearchTemplate
+	studentfilter_data_view_template		: Data/Template/StudentFilterDataViewTemplate
+	studentfilter_data_create_template		: Data/Template/StudentFilterDataCreateTemplate
+	studentfilter_data_update_template		: Data/Template/StudentFilterDataUpdateTemplate
+	studentfilter_data_delete_template		: Data/Template/StudentFilterDataDeleteTemplate
+
+shared:
+	studentfilter_data_search_template		: true
+	studentfilter_data_view_template		: true
+	studentfilter_data_create_template		: true
+	studentfilter_data_update_template		: true
+	studentfilter_data_delete_template		: true

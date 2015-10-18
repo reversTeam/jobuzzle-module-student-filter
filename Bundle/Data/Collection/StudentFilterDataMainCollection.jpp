@@ -1,0 +1,28 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-10-18 10:56:25
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:55:37
+**************************************************************/
+
+class StudentFilterDataMainCollection extends FilterDataMainCollection {
+
+	_entityType = 'StudentFilter';
+	_entityClass = 'studentfilter_data_main_entity';
+
+	getProtected : function () {
+		if (this._protect == undefined) {
+			var parent = _super();
+			this._protect = parent.concat(
+				Config.modules.StudentFilter.collections.update.protect
+			);
+		}
+		return this._protect;
+	}
+
+}
