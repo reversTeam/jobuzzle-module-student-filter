@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:52:07
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-29 01:58:19
 **************************************************************/
 
 class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
@@ -29,19 +29,27 @@ class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
 		style['backgroundImage'] = 'url("'+ picture +'")'; 
 
 		return <div className="filter view">
-			<div className="actions">
-				<i className="fa fa-tasks" data-url={router.entityRoute(entity, 'skilllink')} onClick={this.link}></i>
-				<i className="fa fa-pencil" data-url={this.getUrlEdit()} onClick={this.link}></i>
-			</div>
-			<div className="parent view">
-				<div className="picture" style={style}></div>
-				<div className="nameProfile">
-					{parent.getFirstname() +' '+ parent.getLastname()}
+			<div className="container">
+				<div className="actions">
+					<i className="fa fa-pencil" data-url={this.getUrlEdit()} onClick={this.link}></i>
+				</div>
+				<div className="parent view">
+					<div className="picture" style={style}></div>
+					<div className="nameProfile">
+						{parent.getFirstname() +' '+ parent.getLastname()}
+					</div>
 				</div>
 			</div>
-			<div className="skilllinks">
-				{ this.getHelper('DisplaySkillLink', { entity : entity }) }
-			</div>
+				<div className="more">
+					<div className="container skilllinks">
+						<h2 className="title">Skill</h2>
+						{ this.getHelper('DisplaySkillLink', { entity : entity }) }
+					</div>
+					<div className="container challengelinks">
+						<h2 className="title">Project</h2>
+						{ this.getHelper('DisplayChallengeLink', { entity : entity }) }
+					</div>
+				</div>
 		</div>;
 	}
 
