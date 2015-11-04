@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 12:08:39
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-04 14:56:19
 **************************************************************/
 
 class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
@@ -19,6 +19,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		var parentUrl = router.entityRoute(parent);
 		var filterName = entity.getName();
 		var searchTemplate = this.getSearchTemplate();
+		var t = serviceLocator.get('Translator');
 		
 		if (parent) {
 			var content = <div className="filter timeline">
@@ -36,7 +37,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 						<i className="fa fa-map-marker"></i>Paris
 					</span>
 				</div>
-				<div className="previewSkill">
+				<div className="description">
 					{ this.getHelper('DisplaySkillLink', {
 						entity : entity,
 						limit : 3,
@@ -44,7 +45,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 					}) }
 				</div>
 				<div className="centerButton">
-					<button className="secondary" data-url={this.getUrl()} onClick={this.link}>Voir le profil</button>
+					<button className="secondary" data-url={this.getUrl()} onClick={this.link}>{t.translate('studentfilter.timeline.button')}</button>
 				</div>
 			</div>
 		} else {
