@@ -7,10 +7,13 @@
 #       ## #     # #     # #     #    #       #    # #     #  #
 #       ## #     # #     # #     #   #       #     # ######   # @Last Modified by:   revers
 #  ####### #     # #     # #     #  #       #      # #        #
-#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-10-18 10:53:40
+#  ######   #####   ######  #####  ####### ####### # #######  # @Last Modified time: 2015-11-04 14:58:15
 ###############################################################
 
 view : '{{url}}'
 update : '{{url}}'
 StudentFilters: Filtres étudiants
 levels: Etudiant
+
+timeline:
+	button: View profile
