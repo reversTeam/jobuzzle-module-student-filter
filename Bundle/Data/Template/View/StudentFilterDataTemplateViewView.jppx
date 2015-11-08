@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-04 14:55:03
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 02:54:36
 **************************************************************/
 
 class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
@@ -15,41 +15,18 @@ class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
 	public _class = 'studentfilter';
 	public _elementType = 'StudentFilter';
 
-	public display : function () {
-		var router = serviceLocator.get('Router');
+	public displayContents : function () {
 		var entity = this.state['entity'];
-		var parent = entity.getParent();
-		var picture = '';
-		var style = {};
 
-		if (!entity)
-			return (<div>Filter not loaded</div>);
-		else if (parent.getPicture() != undefined)
-			picture = this.getUrlAsset(parent.getPicture());
-		style['backgroundImage'] = 'url("'+ picture +'")'; 
-
-		return <div className="filter view">
-			<div className="container">
-				<div className="actions">
-					<i className="fa fa-pencil" data-url={this.getUrlEdit()} onClick={this.link}></i>
-				</div>
-				<div className="parent view">
-					<div className="picture" style={style}></div>
-					<div className="nameProfile">
-						{parent.getFirstname() +' '+ parent.getLastname()}
-					</div>
-				</div>
+		return <div className="contents">
+			<div className="skilllinks">
+				<h2 className="title">Skill</h2>
+				{ this.getHelper('DisplaySkillLink', { entity : entity }) }
 			</div>
-				<div className="more">
-					<div className="container skilllinks">
-						<h2 className="title">Skill</h2>
-						{ this.getHelper('DisplaySkillLink', { entity : entity }) }
-					</div>
-					<div className="container challengelinks">
-						<h2 className="title">Project</h2>
-						{ this.getHelper('DisplayChallengeLink', { entity : entity }) }
-					</div>
-				</div>
+			<div className="challengelinks">
+				<h2 className="title">Project</h2>
+				{ this.getHelper('DisplayChallengeLink', { entity : entity }) }
+			</div>
 		</div>;
 	}
 
