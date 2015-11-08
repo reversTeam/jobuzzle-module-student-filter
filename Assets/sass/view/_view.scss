@@ -1,0 +1,60 @@
+/**************************************************************
+*     ####         #                               #          * Jobuzzle - Copyright All rights reserved
+*     ####         #                               #          *
+*       ##  #####  ######  #     # ####### ####### #  #####   * @Author: revers
+*       ## #     # #     # #     #      #       #  # #     #  *
+*       ## #     # #     # #     #     #       #   # #     #  * @Date:   2015-11-08 02:51:50
+*       ## #     # #     # #     #    #       #    # #     #  *
+*       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
+*  ####### #     # #     # #     #  #       #      # #        *
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 02:52:42
+**************************************************************/
+
+div.view.studentfilter {
+	div.contents {
+		width: 100%;
+		clear: both;
+		padding: 0px;
+		margin: 0px;
+
+		&:after, &:before {
+			content:"";
+			display:table;
+		}
+
+		&:after {
+			clear:both;
+		}
+
+		div.skilllinks, div.challengelinks {
+			display: block;
+			padding: 10px;
+			width: 49%;
+			float: left;
+			margin: 1%;
+			box-sizing: border-box;
+			vertical-align: top;
+
+			&:first-child {
+				margin-left: 0%;
+			}
+
+			&:last-child {
+				margin-right: 0%;
+			}
+
+			h2.title {
+				margin: 0px 10px 10px 0px;
+
+				&:after {
+					width: 100%;
+					display: block;
+					height : 1px;
+					background-color: darken($white_color, 10);
+					margin : 10px 0px;
+					content : '';
+				}		
+			}
+		}
+	}
+}
