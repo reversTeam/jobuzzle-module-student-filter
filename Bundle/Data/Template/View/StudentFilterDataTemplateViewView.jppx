@@ -7,7 +7,7 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 02:54:36
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 17:13:03
 **************************************************************/
 
 class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
@@ -15,16 +15,21 @@ class StudentFilterDataTemplateViewView extends FilterDataTemplateViewView {
 	public _class = 'studentfilter';
 	public _elementType = 'StudentFilter';
 
+	public getName : function (entity) {
+		return entity.getParent().getName();
+	}
+
 	public displayContents : function () {
+		var t = serviceLocator.get('Translator');
 		var entity = this.state['entity'];
 
 		return <div className="contents">
 			<div className="skilllinks">
-				<h2 className="title">Skill</h2>
+				<h2 className="title">{t.translate('studentfilter.view.skills')}</h2>
 				{ this.getHelper('DisplaySkillLink', { entity : entity }) }
 			</div>
 			<div className="challengelinks">
-				<h2 className="title">Project</h2>
+				<h2 className="title">{t.translate('studentfilter.view.challenges')}</h2>
 				{ this.getHelper('DisplayChallengeLink', { entity : entity }) }
 			</div>
 		</div>;

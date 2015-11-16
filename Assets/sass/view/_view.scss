@@ -7,10 +7,11 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-08 02:52:42
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-10 02:22:30
 **************************************************************/
 
 div.view.studentfilter {
+
 	div.contents {
 		width: 100%;
 		clear: both;
@@ -45,6 +46,7 @@ div.view.studentfilter {
 
 			h2.title {
 				margin: 0px 10px 10px 0px;
+				font-weight: 100;
 
 				&:after {
 					width: 100%;
