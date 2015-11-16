@@ -7,10 +7,17 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-06 15:46:58
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 11:22:28
 **************************************************************/
 
 class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
+
+	public getDescription : function (entity) {
+		var t = serviceLocator.get('Translator');
+		if (entity && entity.getParent() && entity.getParent().getDescription())
+			return entity.getParent().getDescription()
+		return t.translate('studentfilter.timeline.nodescription');
+	}
 
 	public display : function () {
 		var router = serviceLocator.get('Router');
@@ -22,7 +29,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		var t = serviceLocator.get('Translator');
 		
 		if (parent) {
-			var content = <div className="filter timeline">
+			var content = <div className="filter timeline" onClick={this.link} data-url={this.getUrl()}>
 				<div className="parent" data-url={parentUrl} onClick={this.link}>
 					{ parent ? parent.displayMiniature() : null }
 				</div>
@@ -38,11 +45,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 					</span>
 				</div>
 				<div className="description">
-					{ this.getHelper('DisplaySkillLink', {
-						entity : entity,
-						limit : 3,
-						parent : this._template
-					}) }
+					<p className="text">{ this.getDescription(entity) }</p>
 				</div>
 				<div className="centerButton">
 					<button className="secondary" data-url={this.getUrl()} onClick={this.link}>{t.translate('studentfilter.timeline.button')}</button>
