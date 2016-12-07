@@ -7,10 +7,16 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-09 11:22:28
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-21 13:19:36
 **************************************************************/
 
 class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineView {
+
+	public getClassElement : function () {
+		var classElement = _super();
+		classElement.push('studentfilter');
+		return classElement;
+	}
 
 	public getDescription : function (entity) {
 		var t = serviceLocator.get('Translator');
@@ -19,7 +25,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		return t.translate('studentfilter.timeline.nodescription');
 	}
 
-	public display : function () {
+	public displayContent : function () {
 		var router = serviceLocator.get('Router');
 		var entity = this.state['entity'];
 		var parent = entity.getParent();
@@ -29,7 +35,7 @@ class StudentFilterDataTemplateTimelineView extends FilterDataTemplateTimelineVi
 		var t = serviceLocator.get('Translator');
 		
 		if (parent) {
-			var content = <div className="filter timeline" onClick={this.link} data-url={this.getUrl()}>
+			var content = <div onClick={this.link} data-url={this.getUrl()}>
 				<div className="parent" data-url={parentUrl} onClick={this.link}>
 					{ parent ? parent.displayMiniature() : null }
 				</div>

@@ -7,13 +7,13 @@
 *       ## #     # #     # #     #    #       #    # #     #  *
 *       ## #     # #     # #     #   #       #     # ######   * @Last Modified by:   revers
 *  ####### #     # #     # #     #  #       #      # #        *
-*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-10-18 11:47:40
+*  ######   #####   ######  #####  ####### ####### # #######  * @Last Modified time: 2015-11-21 15:32:08
 **************************************************************/
 
 class StudentFilterDataDeleteTemplate extends FilterDataDeleteTemplate {
 
 	public _viewClassName = 'StudentFilterDataTemplateDeleteView';
 	public _type = 'StudentFilter';
-	public _route = 'studentfilter';
+	public _serviceName = 'studentfilter_data_main_service';
 
 }
